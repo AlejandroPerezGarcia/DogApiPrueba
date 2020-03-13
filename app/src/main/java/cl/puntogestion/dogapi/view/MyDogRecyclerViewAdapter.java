@@ -1,5 +1,7 @@
 package cl.puntogestion.dogapi.view;
 
+import androidx.fragment.app.FragmentHostCallback;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -9,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import cl.puntogestion.dogapi.R;
+
 import cl.puntogestion.dogapi.view.ListDogFragment.OnListFragmentInteractionListener;
 
 import java.util.List;
@@ -30,9 +33,11 @@ import java.util.List;
  */
 public class MyDogRecyclerViewAdapter extends RecyclerView.Adapter<MyDogRecyclerViewAdapter.ViewHolder> {
 
-    private static final String TAG = "MyDogRecyclerViewAdapte";
+    private static final String TAG = "MyDogRecyclerViewAdapter";
     private final List<String> mValues;
     private final OnListFragmentInteractionListener mListener;
+
+
 
     public MyDogRecyclerViewAdapter(List<String> items, OnListFragmentInteractionListener listener) {
         mValues = items;
@@ -56,7 +61,12 @@ public class MyDogRecyclerViewAdapter extends RecyclerView.Adapter<MyDogRecycler
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
-                    //mListener.onListFragmentInteraction(holder.mItem);
+                    Log.d("onClick",mValues.get(position));
+                    
+
+
+                //    interfasJemplo.pasarstring(raza);
+                 //   mListener.onListFragmentInteraction(holder.mItem);
                 }
             }
         });
